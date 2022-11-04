@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk Scheduling Algorithm</title>
+    <link rel="stylesheet" href="/css/stylesheet.css">
+        
+</head>
+
+<body>
+    <header>
+
+        <div id="nav">
+
+            <h1 style="color:orange">Disk  Scheduling  Algorithm</h1>
+            <ul>
+                <li><a href="https://www.linkedin.com/feed/">About Us</a></li>
+                <li><a href="Simulate.html">Algorithm</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <button id="btn"><a href="Simulate.html"> Run Algo </a></button>
+        </div>
+        <div class="matter">
+            <h2>Some Important Terminologies</h2>
+            <div class="m1">
+                <div class="card1">
+                    <h3>Seek Time</h3> <br>
+                    <p>Seek time is the time taken in locating the disk arm to a specified track where the read/write
+                        request will be satisfied.</p>
+                </div>
+                <div class="card1">
+                    <h3>Rotational Latency</h3> <br>
+                    <p>It is the time taken by the desired sector to rotate itself to the position from where it can
+                        access the R/W heads.</p>
+                </div>
+                <div class="card1">
+                    <h3>Transfer Time</h3> <br>
+                    <p>It is the time taken to transfer the data.</p>
+                </div>
+                <div class="card1">
+                    <h3>Disk Access Time</h3> <br>
+                    <p>Disk access time is given as,
+                        Disk Access Time = Rotational Latency + Seek Time + Transfer Time</p>
+                </div>
+                <div class="card1">
+                    <h3>Disk Response Time</h3> <br>
+                    <p>It is the average of time spent by each request waiting for the IO operation.</p> <br>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-section">
+            <h2>Various Disk Scheduling Algorithms</h2>
+            <div id="first">
+                <div class="card">
+                    <h3>First Come First Serve (FCFS)</h3> <br>
+                    <p>FCFS is the simplest disk scheduling algorithm. As the name suggests, this algorithm entertains
+                        requests in the order they arrive in the disk queue. The algorithm looks very fair and there is
+                        no starvation (all requests are serviced sequentially) but generally, it does not provide the
+                        fastest service.</p>
+                </div>
+                <div class="card">
+                    <h3>Shortest Seek Time First (SSTF)</h3> <br>
+                    <p>Shortest seek time first (SSTF) algorithm selects the disk I/O request which requires the least
+                        disk arm movement from its current position regardless of the direction. It reduces the total
+                        seek time as compared to FCFS. It allows the head to move to the closest track in the service
+                        queue.</p>
+                </div>
+                <div class="card">
+                    <h3>SCAN</h3> <br>
+                    <p>In SCAN disk scheduling algorithm, head starts from one end of the disk and moves towards the
+                        other end, servicing requests in between one by one and reach the other end. Then the direction
+                        of the head is reversed and the process continues as head continuously scan back and forth to
+                        access the disk.</p>
+                </div>
+            </div>
+            <div id="second">
+                <div class="card">
+                    <h3>Circular Scan (C-Scan)</h3> <br>
+                    <p>Circular SCAN (C-SCAN) scheduling algorithm is a modified version of SCAN disk scheduling
+                        algorithm that deals with the inefficiency of SCAN algorithm by servicing the requests more
+                        uniformly. Like SCAN (Elevator Algorithm) C-SCAN moves the head from one end servicing all the
+                        requests to the other end.</p>
+                </div>
+                <div class="card">
+                    <h3>LOOK</h3> <br>
+                    <p>The LOOK algorithm services request similarly as SCAN algorithm meanwhile it also “looks” ahead
+                        as if there are more tracks that are needed to be serviced in the same direction. If there are
+                        no pending requests in the moving direction the head reverses the direction and start servicing
+                        requests in the opposite direction.</p>
+                </div>
+                <div class="card">
+                    <h3>Circular Look</h3> <br>
+                    <p>In this algorithm, the head services requests only in one direction until all the requests in
+                        this direction are not serviced and then jumps back to the farthest request on the other
+                        direction and service the remaining requests which gives a better uniform servicing as well as
+                        avoids wasting seek time for going till the end of the disk.</p>
+                </div>
+            </div>
+    </main>
+   
+
+</body>
+
+</html>
